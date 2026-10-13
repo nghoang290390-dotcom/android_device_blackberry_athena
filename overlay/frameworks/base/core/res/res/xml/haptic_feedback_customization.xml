@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<haptic-feedback-constants>
+    <!-- KEY2: stronger navigation-button feedback without changing call vibration -->
+    <constant id="1">
+        <vibration-effect>
+            <waveform-effect>
+                <waveform-entry durationMs="40" amplitude="255"/>
+            </waveform-effect>
+        </vibration-effect>
+    </constant>
+</haptic-feedback-constants>

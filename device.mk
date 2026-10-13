@@ -15,6 +15,17 @@
 
 DEVICE_PATH := device/blackberry/athena
 
+# Build ID
+TARGET_UNOFFICIAL_BUILD_ID := hoang
+
+# Signing keys
+
+# Make userdebug actually debuggable (LOS23 defaults to non-debuggable
+# userdebug which breaks recovery sideload). WITH_ADB_INSECURE is
+# checked by vendor/lineage/config/common.mk before it would otherwise
+# set ro.adb.secure=1 + PRODUCT_NOT_DEBUGGABLE_IN_USERDEBUG.
+WITH_ADB_INSECURE := true
+
 # Vendor blobs
 $(call inherit-product, vendor/blackberry/athena/athena-vendor.mk)
 
@@ -40,14 +51,19 @@ TARGET_SCREEN_WIDTH := 1080
 # Camera shims
 PRODUCT_PACKAGES += \
     libskia_shim \
-    libjnigraphics_shim
+    libjnigraphics_shim \
+    libcameracompat
+
+# Camera gralloc compat init override
+PRODUCT_COPY_FILES += \
+    device/blackberry/sdm660-common/camera/libcameracompat/init.cameracompat.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.cameracompat.rc
+
+# BB OREO camera HAL needs libexif (was VNDK in Android 8, removed since)
+PRODUCT_PACKAGES += \
+    libexif.vendor
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
-
-# Athena camera configs
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/camera/,$(TARGET_COPY_OUT_VENDOR)/etc/camera)
 
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-blackberry
@@ -57,10 +73,16 @@ PRODUCT_PACKAGES += \
     libbinder_shim.vendor \
     libfakelogprint
 
-# Camera - Shims for OREO camera HAL
+# Touch Keypad - source not available for LOS23
+#PRODUCT_PACKAGES += \
+#    vendor.blackberry.touchkeypad-service
+
+# Lokker (privileged system_ext app) + K12KB (product app)
 PRODUCT_PACKAGES += \
-    libskia_shim \
-    libjnigraphics_shim
+    Lokker \
+    com.lokker.app.privapp-permissions \
+    BBKeyboardVN \
+    DeviceSettings
 
 # Inherit from BlackBerry sdm660-common
 $(call inherit-product, device/blackberry/sdm660-common/common.mk)

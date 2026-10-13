@@ -1,3 +1,6 @@
+# Disable Lineage Aperture; use BlackBerry Camera
+PRODUCT_NO_CAMERA := true
+
 #
 # Copyright (C) 2026 The LineageOS Project
 #
@@ -25,3 +28,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="bbf100dsglobal 8 OPM1.171019.026 ACQ160 release-keys" \
     BuildFingerprint=blackberry/bbf100dsglobal/bbf100:8.1.0/OPM1.171019.026/ACQ160:user/release-keys \
     DeviceProduct=bbf100dsglobal
+
+# BlackBerry Camera GOLDEN
+PRODUCT_PACKAGES += BlackBerryCamera

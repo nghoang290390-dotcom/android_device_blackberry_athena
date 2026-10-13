@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="device_settings_title">BlackBerry keyboard</string>
+    <string name="device_settings_summary">Keyboard shortcuts and backlight settings</string>
+
+    <string name="show_ime_title">Allow on-screen keyboard</string>
+    <string name="show_ime_summary">Show virtual keyboard even when hardware keyboard is connected</string>
+
+    <string name="ime_switcher_shortcut_title">IME switcher shortcut</string>
+    <string name="ime_switcher_shortcut_summary">Key combination to open input method picker</string>
+
+    <string name="ime_shortcut_sym">SYM key</string>
+    <string name="ime_shortcut_alt_enter">Alt + Enter</string>
+    <string name="ime_shortcut_shift_space">Shift + Space</string>
+    <string name="ime_shortcut_ctrl">Ctrl key</string>
+
+    <string name="backlight_category">Backlight</string>
+    <string name="keyboard_brightness_title">Keyboard brightness</string>
+    <string name="keyboard_brightness_summary">Brightness level for keyboard backlight</string>
+    <string name="button_brightness_title">Button brightness</string>
+    <string name="button_brightness_summary">Brightness level for navigation buttons</string>
+    <string name="button_timeout_title">Keyboard and nav-buttons backlight</string>
+    <string name="button_timeout_summary">Time before keyboard and nav-buttons backlight turns off</string>
+
+    <string name="timeout_1s">1 second</string>
+    <string name="timeout_2s">2 seconds</string>
+    <string name="timeout_5s">5 seconds</string>
+    <string name="timeout_10s">10 seconds</string>
+    <string name="timeout_always">Enabled (no timeout)</string>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:key="show_ime_with_hard_keyboard"
+        android:title="@string/show_ime_title"
+        android:summary="@string/show_ime_summary"
+        android:defaultValue="true" />
+
+    <ListPreference
+        android:key="ime_switcher_shortcut"
+        android:title="@string/ime_switcher_shortcut_title"
+        android:summary="@string/ime_switcher_shortcut_summary"
+        android:entries="@array/ime_switcher_shortcut_entries"
+        android:entryValues="@array/ime_switcher_shortcut_values"
+        android:defaultValue="0" />
+
+    <PreferenceCategory
+        android:key="backlight_category"
+        android:title="@string/backlight_category">
+
+        <SeekBarPreference
+            android:key="keyboard_brightness"
+            android:title="@string/keyboard_brightness_title"
+            android:summary="@string/keyboard_brightness_summary"
+            android:max="100"
+            android:defaultValue="100" />
+
+        <SeekBarPreference
+            android:key="button_brightness"
+            android:title="@string/button_brightness_title"
+            android:summary="@string/button_brightness_summary"
+            android:max="100"
+            android:defaultValue="100" />
+
+        <ListPreference
+            android:key="button_timeout"
+            android:title="@string/button_timeout_title"
+            android:summary="@string/button_timeout_summary"
+            android:entries="@array/button_timeout_entries"
+            android:entryValues="@array/button_timeout_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

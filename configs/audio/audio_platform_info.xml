@@ -58,6 +58,7 @@
         <usecase name="USECASE_AUDIO_PLAYBACK_AFE_PROXY" type="out" id="6"/>
         <usecase name="USECASE_AUDIO_RECORD_AFE_PROXY" type="in" id="7"/>
         <usecase name="USECASE_AUDIO_RECORD_LOW_LATENCY" type="in" id="17" />
+        <usecase name="USECASE_AUDIO_RECORD_VOIP" type="in" id="0" />
         <usecase name="USECASE_AUDIO_PLAYBACK_ULL" type="out" id="17" />
         <usecase name="USECASE_AUDIO_PLAYBACK_SILENCE" type="out" id="27" />
         <usecase name="USECASE_AUDIO_HFP_SCO" type="in" id="12" />
@@ -113,6 +114,8 @@
         <device name="SND_DEVICE_OUT_VOICE_LINE" backend="headphones" interface="INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_TTY_FULL_HEADPHONES" backend="headphones" interface="INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_VOICE_TTY_VCO_HEADPHONES" backend="headphones" interface="INT0_MI2S_RX"/>
+        <!-- KEY2_BOOMSOUND_V1: split TERT speaker + INT0 handset -->
+        <device name="SND_DEVICE_OUT_SPEAKER_AND_HANDSET" backend="speaker-and-handset" interface="TERT_MI2S_RX-and-INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_HANDSET" interface="INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_SPEAKER" backend="speaker" interface="TERT_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_SPEAKER_EXTERNAL_1" interface="TERT_MI2S_RX"/>

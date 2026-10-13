@@ -1,0 +1,9 @@
+android_app_import {
+    name: "BlackBerryCamera",
+    apk: "BlackBerryCamera.apk",
+    preprocessed: true,
+    product_specific: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}

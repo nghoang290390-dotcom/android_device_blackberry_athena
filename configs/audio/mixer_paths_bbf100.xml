@@ -1454,6 +1454,23 @@
         <path name="compress-offload-playback9 bt-sco-wb" />
     </path>
 
+    <path name="audio-record-voip">
+        <ctl name="MultiMedia1 Mixer INT3_MI2S_TX" value="1" />
+    </path>
+
+    <path name="audio-record-voip bt-sco">
+        <ctl name="MultiMedia1 Mixer SLIM_7_TX" value="1" />
+    </path>
+
+    <path name="audio-record-voip bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
+        <path name="audio-record-voip bt-sco" />
+    </path>
+
+    <path name="audio-record-voip usb-headset-mic">
+        <ctl name="MultiMedia1 Mixer USB_AUDIO_TX" value="1" />
+    </path>
+
     <path name="audio-record">
         <ctl name="MultiMedia1 Mixer INT3_MI2S_TX" value="1" />
     </path>
@@ -2152,6 +2169,9 @@
 
     <path name="voice-headphones">
 <!--        <path name="headphones" /> -->
+        <ctl name="AK4376 BICK Frequency Select" value="fs_64" />
+        <ctl name="HPH SRC" value="AKM" />
+        <ctl name="AK4376 PDN Control" value="on" />
         <ctl name="INT0_MI2S_RX Channels" value="Two" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
@@ -2627,6 +2647,87 @@
     </path>
     <path name="hifi-record usb-headset-mic">
         <ctl name="MultiMedia2 Mixer USB_AUDIO_TX" value="1" />
+    </path>
+
+
+    <!-- KEY2_BOOMSOUND_V1: experimental dual speaker; no PA boost. -->
+    <path name="speaker-and-handset">
+        <path name="speaker" />
+        <path name="handset" />
+        <!-- Attenuate earpiece relative to stock 84; no PA gain increase. -->
+        <ctl name="RX1 Digital Volume" value="56" />
+    </path>
+    <path name="deep-buffer-playback speaker-and-handset">
+        <path name="deep-buffer-playback speaker" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia1" value="1" />
+        <!-- Attenuate earpiece on the playback path, even when HAL splits devices. -->
+        <ctl name="RX1 Digital Volume" value="56" />
+    </path>
+    <path name="low-latency-playback speaker-and-handset">
+        <path name="low-latency-playback speaker" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia5" value="1" />
+        <!-- Attenuate earpiece on the playback path, even when HAL splits devices. -->
+        <ctl name="RX1 Digital Volume" value="56" />
+    </path>
+    <path name="audio-ull-playback speaker-and-handset">
+        <path name="audio-ull-playback speaker" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia8" value="1" />
+        <!-- Attenuate earpiece on the playback path, even when HAL splits devices. -->
+        <ctl name="RX1 Digital Volume" value="56" />
+    </path>
+    <path name="compress-offload-playback speaker-and-handset">
+        <path name="compress-offload-playback speaker" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia4" value="1" />
+        <!-- Attenuate earpiece on the playback path, even when HAL splits devices. -->
+        <ctl name="RX1 Digital Volume" value="56" />
+    </path>
+    <path name="compress-offload-playback2 speaker-and-handset">
+        <path name="compress-offload-playback2 speaker" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia7" value="1" />
+        <!-- Attenuate earpiece on the playback path, even when HAL splits devices. -->
+        <ctl name="RX1 Digital Volume" value="56" />
+    </path>
+    <path name="compress-offload-playback3 speaker-and-handset">
+        <path name="compress-offload-playback3 speaker" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia10" value="1" />
+        <!-- Attenuate earpiece on the playback path, even when HAL splits devices. -->
+        <ctl name="RX1 Digital Volume" value="56" />
+    </path>
+    <path name="compress-offload-playback4 speaker-and-handset">
+        <path name="compress-offload-playback4 speaker" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia11" value="1" />
+        <!-- Attenuate earpiece on the playback path, even when HAL splits devices. -->
+        <ctl name="RX1 Digital Volume" value="56" />
+    </path>
+    <path name="compress-offload-playback5 speaker-and-handset">
+        <path name="compress-offload-playback5 speaker" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia12" value="1" />
+        <!-- Attenuate earpiece on the playback path, even when HAL splits devices. -->
+        <ctl name="RX1 Digital Volume" value="56" />
+    </path>
+    <path name="compress-offload-playback6 speaker-and-handset">
+        <path name="compress-offload-playback6 speaker" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia13" value="1" />
+        <!-- Attenuate earpiece on the playback path, even when HAL splits devices. -->
+        <ctl name="RX1 Digital Volume" value="56" />
+    </path>
+    <path name="compress-offload-playback7 speaker-and-handset">
+        <path name="compress-offload-playback7 speaker" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia14" value="1" />
+        <!-- Attenuate earpiece on the playback path, even when HAL splits devices. -->
+        <ctl name="RX1 Digital Volume" value="56" />
+    </path>
+    <path name="compress-offload-playback8 speaker-and-handset">
+        <path name="compress-offload-playback8 speaker" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia15" value="1" />
+        <!-- Attenuate earpiece on the playback path, even when HAL splits devices. -->
+        <ctl name="RX1 Digital Volume" value="56" />
+    </path>
+    <path name="compress-offload-playback9 speaker-and-handset">
+        <path name="compress-offload-playback9 speaker" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia16" value="1" />
+        <!-- Attenuate earpiece on the playback path, even when HAL splits devices. -->
+        <ctl name="RX1 Digital Volume" value="56" />
     </path>
 
 </mixer>

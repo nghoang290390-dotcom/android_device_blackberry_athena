@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ime_switcher_shortcut_entries">
+        <item>@string/ime_shortcut_sym</item>
+        <item>@string/ime_shortcut_alt_enter</item>
+        <item>@string/ime_shortcut_shift_space</item>
+        <item>@string/ime_shortcut_ctrl</item>
+    </string-array>
+
+    <string-array name="ime_switcher_shortcut_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="button_timeout_entries">
+        <item>@string/timeout_always</item>
+        <item>@string/timeout_1s</item>
+        <item>@string/timeout_2s</item>
+        <item>@string/timeout_5s</item>
+        <item>@string/timeout_10s</item>
+    </string-array>
+
+    <string-array name="button_timeout_values">
+        <item>0</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>5000</item>
+        <item>10000</item>
+    </string-array>
+</resources>
